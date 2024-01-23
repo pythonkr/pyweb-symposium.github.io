@@ -1,0 +1,89 @@
+title: PyWeb Symposium 2023
+preposition: ''
+description: >-
+  파이썬으로 만드는 모든 웹 서비스 기술을 다루는 파이 웹 심포지움에 오신 것을 환영합니다
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://pyweb.python.or.kr" # the base hostname & protocol for your site, e.g. https://example.com
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - .github/
+  - venv/
+  - README.md
+  - LICENSE.md
+  - REDISTRIBUTED.md
+  - screenshot.png
+  - jekyll-theme-conference.gemspec
+  - purgecss.config.js
+  - _config.example.yml
+
+# Collections and their defaults
+collections:
+  talks:
+    output: true
+    permalink: /:collection/:title/
+  speakers:
+    output: true
+    permalink: /:collection/:title/
+  rooms:
+    output: true
+    permalink: /:collection/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+  - scope:
+      path: ""
+      type: speakers
+    values:
+      layout: speaker
+  - scope:
+      path: ""
+      type: rooms
+    values:
+      layout: room
+
+# Theme default values
+conference:
+  lang: en
+  show_errors: True
+
+  navigation:
+    links:
+      - name: CoC
+        absolute_url: https://2023.pycon.kr/coc/purpose
+
+  link_preview:
+    disable: false
+
+  speakers:
+    show_firstname: true
+
+  location:
+    url: '/location'
+    map: true
+
+  program:
+    url: '/program'
+    time_steps: 15
+    show_alltimes: true
+
+  talks:
+    # Talk categories
+    main_categories:
+      - name: Cat A
+        color: info
+      - name: Cat B
+        color: success
+
+    # Hide icons on talk overview page
+    hide_icons: false
+    

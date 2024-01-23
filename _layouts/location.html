@@ -1,0 +1,25 @@
+{% include partials/header.html %}
+
+  {% assign this_room = page %}
+
+  <h1 class="display-5 mb-3">
+    {% if page.title %}
+      {{ page.title }}
+    {% else %}
+      {{ site.data.lang[site.conference.lang].location.directions | default: "Directions" }}
+    {% endif %}
+  </h1>
+
+  {% assign this_room = page %}
+
+  {% unless site.conference.location.hide %}
+    {% include partials/navbar_rooms.html %}
+  {% endunless %}
+
+  {{ content }}
+
+  {% if site.conference.location.map %}
+    <div id="map" class="mt-4 mb-3"></div>
+  {% endif %}
+
+{% include partials/footer.html %}

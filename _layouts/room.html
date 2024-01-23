@@ -1,0 +1,70 @@
+{%- assign this_room = page -%}
+
+{%- unless this_room.hide or site.conference.location.hide -%}
+  {%- include partials/header.html -%}
+
+  <!-- title for print: -->
+  <h1 class="display-5 mb-3 d-none d-print-inline">
+    {{ this_room.name }}
+  </h1>
+
+  <!-- title shown in browser: -->
+  <h1 class="display-5 mb-3 d-print-none">
+    {{ site.data.lang[site.conference.lang].location.rooms | default: "Rooms" }}
+  </h1>
+
+  {% include partials/navbar_rooms.html %}
+
+  {{ content }}
+
+  {% assign room_talks = false %}
+  {% for d in site.data.program.days %}
+    {% include partials/get_day_hash.html %}
+    {% for r in d.rooms %}
+      {% if this_room.name == r.name and r.talks.size > 0 %}
+        {% unless room_talks %}
+          <h5 class="mt-4 mb-2">
+            {{ site.data.lang[site.conference.lang].location.talks | default: "Talks in this room" }}:
+          </h5>
+          {% assign room_talks = true %}
+        {% endunless %}
+
+        <h6 class="mt-1 mb-0">
+          {{- day_name -}}
+        </h6>
+
+        <table class="list-program">
+        {%- for t in r.talks -%}
+          {%- assign talk = site.talks | where: 'name', t.name | first -%}
+          {%- include partials/get_main_category.html %}
+
+          <tr>
+            <td class="pr-2">
+              {%- include partials/get_talk_time.html -%}
+              {%- assign talk_day_hide = true -%}
+              {%- assign talk_time_styleclass = "w-100" -%}
+              {% include partials/show_talk_time.html %}
+
+              {%- assign live_button_styleclass = "w-100" -%}
+              {% include partials/show_live_button.html %}
+            </td>
+            <td class="pl-2 border-soft-{{ main_cat_color }}">
+              <p class="mb-0">
+                {%- include partials/show_talk.html -%}
+              </p>
+              <p class="font-weight-light mb-0">
+                {%- include partials/list_speakers.html -%}
+              </p>
+            </td>
+          </tr>
+        {%- endfor -%}
+
+        </table>
+        {%- break -%}
+
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  {%- include partials/footer.html -%}
+{%- endunless -%}

@@ -1,0 +1,26 @@
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+name: Test Website Generation
+
+jobs:
+  build:
+    name: Test Website Generation
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Setup Ruby, Bundler and Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.1'
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Build website
+        run: |
+          bundle exec jekyll build -d _site/

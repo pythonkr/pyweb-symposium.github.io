@@ -1,0 +1,111 @@
+{%- assign speaker = page -%}
+
+{%- unless speaker.hide -%}
+  {%- include partials/header.html -%}
+
+  <p class="h6">
+    {{ site.data.lang[site.conference.lang].speaker.title | default: "Speaker" }}
+  </p>
+
+  <h1 class="font-weight-light mb-3">
+    {{ speaker.first_name }} {{ speaker.last_name }}
+  </h1>
+
+  {{ content }}
+
+  {% include partials/get_link_types.html %}
+
+  {% if has_icon_links %}
+    <ul class="list-unstyled">
+      {% for link in speaker.links %}
+        {% assign link_styleclass = "text-reset" %}
+        {% include partials/get_link.html %}
+
+        {% if link_icon %}
+          <li class="mb-1">
+            {{ link_tag }}
+              <span class="badge badge-light font-weight-normal mr-1">
+                <i class="fas fa-{{ link_icon }} fa-fw"></i>
+              </span>
+              {{- link.name }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if has_regular_links %}
+    <h5 class="mt-4 mb-1">{{ site.data.lang[site.conference.lang].more_information | default: "More Information" }}:</h5>
+
+    <ul class="list-unstyled">
+      {% for link in speaker.links %}
+        {% assign link_styleclass = "text-reset" %}
+        {% include partials/get_link.html %}
+
+        {% unless link_icon %}
+          <li class="mb-1 ml-2 pl-2 border-soft-primary">
+            {{ link_tag }}
+              {{ link.name }}
+            </a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% assign active_speaker = false %}
+  {% for talk in site.talks %}
+    {% for speaker_name in talk.speakers %}
+      {% if speaker_name == speaker.name %}
+        {% assign active_speaker = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  {% if active_speaker %}
+    <h5 class="mt-4 mb-0">{{ site.data.lang[site.conference.lang].speaker.talks | default: "Talks at this conference" }}:</h5>
+
+    <table class="list-program">
+      {%- for d in site.data.program.days -%}
+        {%- include partials/get_day_hash.html -%}
+        {%- for r in d.rooms -%}
+          {%- for t in r.talks -%}
+            {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+            {%- for speaker_name in talk.speakers -%}
+              {%- if speaker_name == speaker.name -%}
+
+                {%- include partials/get_main_category.html -%}
+
+                <tr>
+                  <td class="pr-2 py-0">
+                    {%- include partials/get_talk_time.html -%}
+                    {%- assign talk_time_styleclass = "w-100" -%}
+                    {%- include partials/show_talk_time.html -%}
+                  </td>
+                  <td class="pl-2 py-0 align-baseline border-soft-{{ main_cat_color }}">
+                    <span class="mr-2">
+                      {%- include partials/show_talk.html -%}
+                    </span>
+                    {%- include partials/show_live_button.html -%}
+                  </td>
+                </tr>
+
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </table>
+  {% endif %}
+
+  <p class="d-print-none mt-5">
+    <a href="{{ page.collection | prepend: '/' | prepend: site.baseurl }}" class="btn btn-light">
+      <i class="fas fa-users"></i>&nbsp;{{ site.data.lang[site.conference.lang].overview | default: "Overview" }}
+    </a>
+  </p>
+
+  {%- include partials/footer.html -%}
+{%- endunless -%}

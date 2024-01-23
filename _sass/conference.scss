@@ -1,0 +1,250 @@
+
+// Framework Configuration
+
+//   Bootstrap Theme
+$border-radius:                .1rem !default;
+$alert-border-width:           4px !default;
+$alert-color-level:            9 !default;
+$badge-font-size:              .85em !default;
+$enable-responsive-font-sizes: true !default;
+//     Set different default as Bootstrap's choice is a very flashy blue
+$primary:                      #074 !default;
+
+//   FontAwesome
+$fa-font-path: '/assets/webfonts' !default;
+
+
+// Import Sources
+
+//   Style Framework: Bootstrap
+@import 'bootstrap/bootstrap';
+//   Icons: FontAwesome
+@import 'font-awesome/fontawesome';
+@import 'font-awesome/regular';
+@import 'font-awesome/solid';
+//   Map Display Framework: Leaflet
+@import 'leaflet/leaflet';
+@import 'leaflet/leaflet-easybutton';
+@import 'leaflet/leaflet-locatecontrol';
+
+
+// Adapt Bootstrap Elements
+
+//   Alert
+.alert {
+  //$alert-border-radius
+  border-width: 0px;
+  border-left-width: $alert-border-width;
+}
+
+@each $color, $value in $theme-colors {
+  .border-soft-#{$color} {
+    border-color: theme-color-level($color, $alert-border-level);
+    border-left-width: $alert-border-width;
+    border-left-style: solid;
+  }
+  .bg-soft-#{$color} {
+    @include gradient-bg(theme-color-level($color, $alert-bg-level));
+  }
+}
+
+//   Button group for lists
+ul.btn-group {
+  > li:not(:first-child) > .btn {
+    margin-left: -$btn-border-width;
+    @include border-left-radius(0);
+  }
+
+  > li:not(:last-child) > .btn {
+    @include border-right-radius(0);
+  }
+}
+
+// Extend Bootstrap Elements
+.display-5 {
+  font-size:   3rem;
+  font-weight: $display4-weight;
+  line-height: $display-line-height;
+}
+.font-normal {
+  .badge {
+    font-size:   .85em;
+  }
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+// Custom Styling
+
+// General
+
+//   Keep images in container
+main.container img {
+  max-width: 100%;
+  height: auto;
+}
+
+//   No bottom margin on info-bar
+.alert > p:last-of-type {
+  margin-bottom: 0;
+}
+
+//   Live icon
+.live-button > object {
+  width: 0.85em;
+  height: 0.85em;
+  color: inherit;
+}
+
+//   Live button font size in navigation bar
+.nav-link .live-button {
+  font-size: 1em;
+}
+
+// Program
+
+//   Sticky header and first column
+.table {
+  // Avoid sticky cells without border
+  border-collapse: separate;
+
+  // Correct border-width caused by border-collapse
+  border-spacing: 0px;
+  tbody tr:first-of-type > * {
+    border-top-width: 0px;
+  }
+
+  // Sticky horizontal positioning
+  th {
+    position: sticky;
+    background-color: $body-bg;
+  }
+  th:first-of-type {
+    left: 0px;
+    z-index: 1;
+  }
+
+  // Hide shadow of table cells next to sticky header
+  thead tr > th:last-of-type {
+    box-shadow: 10px 0px 0px 0px rgba(255,255,255,1);
+  }
+}
+
+//   Column Width
+.table {
+  // First row defines width for all columns
+  table-layout: fixed;
+
+  // Columns define table width
+  width: auto;
+
+  // Column widths
+  th, td {
+    // Total available container width is 1110px
+
+    // Width of columns with content (default)
+    width: 245px;
+    min-width: 245px;
+
+    // Spacing between columns
+    &.col-space {
+      width: 15px;
+      min-width: 15px;
+    }
+    // Width of first column containing timestamps
+    &.col-title {
+      width: 70px;
+      min-width: 70px;
+    }
+  }
+}
+
+// Location
+.nav-pills .nav-link.active {
+  background-color: theme-color-level('primary', $alert-bg-level);
+  color: var(--dark);
+}
+#map {
+  height: 50vh;
+  min-height: 400px;
+  width: 100%;
+}
+
+//   Program per Room
+.list-program {
+  border: 0 none white;
+
+  border-collapse: separate;
+  border-spacing: 0 0.5em;
+
+  tr {
+    td:first-child {
+      vertical-align: top;
+    }
+
+    td:last-child {
+      width: 100%;
+    }
+  }
+}
+
+// Speaker
+.speakergroup {
+  page-break-inside: avoid;
+  break-inside:      avoid-column;
+}
+@include media-breakpoint-up(sm) {
+  .speakerlist {
+    column-count: 1;
+  }
+}
+@include media-breakpoint-up(md) {
+  .speakerlist {
+    column-count: 2;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .speakerlist {
+    column-count: 3;
+  }
+}
+
+
+// Print
+@media print {
+  // remove underline for links
+  a {
+    text-decoration: none !important;
+  }
+
+  // overwrite bootstrap default white background
+  // works only with Webkit (Chrome, Safari) and Firefox
+  @each $color, $value in $theme-colors {
+    .table td.alert-#{$color} {
+      color-adjust: exact;
+      background-color: theme-color-level($color, $alert-bg-level) !important;
+
+      color: black;
+    }
+  }
+  .badge {
+    color-adjust: exact;
+
+    border: 0 none white;
+    text-decoration: none !important;
+  }
+
+  // Remove sticky position from table to show borders
+  .table  th {
+    position: inherit;
+  }
+
+  // Remove live buttons
+  .live-show {
+    display: none;
+  }
+  .live-hide {
+    display: inline-block !important;
+  }
+}

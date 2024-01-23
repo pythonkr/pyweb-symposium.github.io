@@ -1,0 +1,123 @@
+{%- assign talk = page -%}
+
+{%- unless talk.hide -%}
+  {%- include partials/header.html -%}
+
+  <div class="d-flex flex-lg-row flex-column container-fluid mb-2 p-0">
+    <div class="h6 mt-2 mb-0 mr-1 pr-1 pb-1">
+      {% include partials/get_main_category.html %}
+      <span class="p-1 pl-2 pr-2 border-soft-{{ main_cat_color }} bg-soft-{{ main_cat_color }} font-weight-normal">
+        {{ main_cat }}
+      </span>
+    </div>
+
+    {% if talk.categories.size > 1 %}
+      <div class="h6 mt-2 mb-0 ml-1 pr-1 pb-1">
+        {% for cat in talk.categories %}
+          {% if cat != main_cat %}
+            <span class="mr-2">{{ cat }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <h1 class="font-weight-light">{{ talk.name }}</h1>
+
+  <p class="mb-3 font-weight-light">
+    {% include partials/list_speakers.html %}
+  </p>
+
+  <div class="mb-3 p-0">
+    {% for d in site.data.program.days -%}
+      {%- include partials/get_day_hash.html -%}
+      {%- for r in d.rooms -%}
+        {%- for t in r.talks -%}
+          {%- if talk.name == t.name -%}
+
+            {%- if site.conference.live -%}
+              {%- include partials/get_talk_timestamp.html -%}
+              <span class="live-hide" data-start="{{ timestamp_start }}" data-end="{{ timestamp_end }}">
+            {%- endif -%}
+
+            {%- include partials/get_time_pronoun.html -%}
+            {%- include partials/get_talk_time.html -%}
+            <span class="d-none d-sm-inline">
+              {{- time_pronoun -}}
+            </span> {% include partials/show_talk_time.html -%}
+
+            {%- if site.conference.live -%}
+              </span>
+              {%- include partials/show_live_button.html -%}
+            {%- endif -%}
+
+            {%- assign room = site.rooms | where: 'name', r.name | first -%}
+            <span class="d-none d-sm-inline ml-1">
+              {{- site.data.lang[site.conference.lang].pronoun.in | default: "in" -}}
+            </span> {% include partials/show_room.html -%}
+
+            <span class="d-none d-sm-inline ml-1">
+              {{- site.data.lang[site.conference.lang].pronoun.for | default: "for" -}}
+            </span> {% include partials/show_talk_duration.html -%}
+
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  {{ content }}
+
+  {% include partials/get_link_types.html %}
+
+  {% if has_icon_links %}
+    <ul class="list-unstyled">
+      {% for link in talk.links %}
+        {% assign link_styleclass = "text-reset" %}
+        {% include partials/get_link.html %}
+
+        {% if link_icon %}
+          <li class="mb-1">
+            {{ link_tag }}
+              <span class="badge bg-soft-{{ main_cat_color }} font-weight-normal mr-1">
+                <i class="fas fa-{{ link_icon }} fa-fw"></i>
+              </span>
+              {{- link.name }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if has_regular_links %}
+    <h5 class="mt-4 mb-1">{{ site.data.lang[site.conference.lang].more_information | default: "More information" }}:</h5>
+
+    <ul class="list-unstyled">
+      {% for link in talk.links %}
+        {% assign link_styleclass = "text-reset" %}
+        {% include partials/get_link.html %}
+
+        {% unless link_icon %}
+          <li class="mb-1 ml-2 pl-2 border-soft-{{ main_cat_color }}">
+            {{ link_tag }}
+              {{ link.name }}
+            </a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <p class="d-print-none mt-5">
+    <a href="{{ page.collection | prepend: '/' | prepend: site.baseurl }}" class="btn btn-light">
+      <i class="fas fa-bullhorn"></i>&nbsp;{{ site.data.lang[site.conference.lang].overview | default: "Overview" }}
+    </a>
+
+    <a href="{{ site.conference.program.url | prepend: site.baseurl }}" class="btn btn-light">
+      <i class="far fa-calendar-alt"></i>&nbsp;{{ site.data.lang[site.conference.lang].program.title | default: "Program" }}
+    </a>
+  </p>
+
+  {%- include partials/footer.html -%}
+{%- endunless -%}
