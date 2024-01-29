@@ -10,6 +10,9 @@ markdown: kramdown
 sass:
   style: compressed
 
+plugins:
+  - jekyll-include-cache
+
 # Exclude from processing
 exclude:
   - .github/
