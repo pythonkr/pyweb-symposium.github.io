@@ -9,4 +9,3 @@ layout: home
 장소 : 한국 마이크로소프트 (https://naver.me/5CzpevRF)
 
 <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScT_ucM_r7HzD5KwT83K3Tojda_zjxGbR0wRjLKWPwgLj5lDA/viewform?pli=1">발표자 지원하기</a>
-<a class="button button_disabled">참가 신청하기</a>
