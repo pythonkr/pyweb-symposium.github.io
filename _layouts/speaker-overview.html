@@ -30,10 +30,10 @@
 
       <li class="font-weight-light">
         {% if speaker.hide %}
-          {{ speaker.last_name }} {{ speaker.first_name }} 
+          {{ speaker.last_name }}{{ speaker.first_name }} 
         {% else %}
           <a href="{{ speaker.url | prepend: site.baseurl }}">
-            {{ speaker.last_name }} {{ speaker.first_name }}
+            {{ speaker.last_name }}{{ speaker.first_name }}
           </a>
         {% endif %}
       </li>

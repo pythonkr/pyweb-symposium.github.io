@@ -45,10 +45,10 @@
   {%- elsif speaker -%}
     {%- capture modal_title -%}
       {%- if speaker.hide -%}
-        {{ speaker.last_name }} {{ speaker.first_name }} 
+        {{ speaker.last_name }}{{ speaker.first_name }} 
       {%- else -%}
         <a class="text-reset" href="{{ speaker.url | prepend: site.baseurl }}">
-          {{ speaker.last_name }} {{ speaker.first_name }}
+          {{ speaker.last_name }}{{ speaker.first_name }}
         </a>
       {%- endif -%}
     {%- endcapture -%}
