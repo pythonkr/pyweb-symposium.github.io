@@ -1,18 +1,14 @@
 ---
-name: Arcu Non Odio
+name: "과거로의 회귀? Hypermedia 기반 개발 fastapi HTMX 체험하기"
 speakers:
-  - Alex Rosales
+  - 김순
 categories:
-  - Cat A
-  - Talk
-links:
-  - name: Recodring
-    icon: video
-    absolute_url: https://media.ccc.de/
-  - name: Wikipedia
-    absolute_url: https://en.wikipedia.org
+  - 웹 프레임워크 (Web Framework)
+  - 20min
 ---
 
-Duis at tellus at urna condimentum mattis pellentesque id nibh. In fermentum et sollicitudin ac orci phasellus egestas. Convallis aenean et tortor at risus viverra. Mus mauris vitae ultricies leo integer. Metus dictum at tempor commodo ullamcorper. Sem nulla pharetra diam sit. Eu lobortis elementum nibh tellus molestie nunc.
+- 발표 길이: 20분
 
-Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Tellus at urna condimentum mattis. Suspendisse sed nisi lacus sed viverra tellus. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Nunc eget lorem dolor sed viverra. Id volutpat lacus laoreet non curabitur.
+Django는 파이썬으로 작성된 고수준의 웹 프레임워크로, 빠른 개발과 깔끔한 설계를 가능하게 합니다. HTMX는 HTML을 확장하여 Ajax, CSS Transitions 등의 현대적인 웹 기술을 사용하지 않고도 동적인 웹 페이지를 만들 수 있게 해주는 라이브러리입니다. 이 두 기술을 결합함으로써, 개발자들은 서버 측에서 렌더링된 HTML을 클라이언트 측에서 동적으로 조작할 수 있게 되어, SPA(Single Page Application)와 같은 현대적인 사용자 경험을 제공하면서도 전통적인 웹 개발의 단순함과 안정성을 유지할 수 있습니다.
+
+이 발표에서는 이러한 기술적 접근 방식의 장점과 함께, 실제 Django와 HTMX를 사용하여 개발된 웹 애플리케이션의 사례를 소개하고, Hypermedia 기반 개발의 개념과 이점, 그리고 이를 통해 어떻게 과거 웹 개발의 간결함과 현대 웹 개발의 동적인 사용자 경험을 조화롭게 결합할 수 있는지에 대해 논의합니다.
