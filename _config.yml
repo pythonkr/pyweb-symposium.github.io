@@ -61,6 +61,8 @@ conference:
 
   navigation:
     links:
+      - name: 발표 목록
+        relative_url: /talks/
       - name: CoC
         absolute_url: https://2023.pycon.kr/coc/purpose
 
@@ -82,10 +84,26 @@ conference:
   talks:
     # Talk categories
     main_categories:
-      - name: Cat A
+      - name: 웹 프레임워크 (Web Framework)
+        color: danger
+      - name: 설계 (Architecture)
         color: info
-      - name: Cat B
+      - name: 배포 (CI / CD) (Deploy)
+        color: dark
+      # - name: 모니터링 (Monitoring)
+      #   color: warning
+      - name: 웹서비스 운영 (Operating web service)
         color: success
+      # - name: 어드민툴 (Administrator's tool)
+      #   color: warning
+      # - name: 대용량 데이터베이스 (Database)
+      #   color: success
+      # - name: K8S
+      #   color: dark
+      - name: 클라우드 (Cloud)
+        color: dark
+      - name: 후원사 (Sponsor)
+        color: warning
 
     # Hide icons on talk overview page
     hide_icons: false

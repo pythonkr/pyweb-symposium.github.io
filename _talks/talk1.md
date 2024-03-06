@@ -1,12 +1,12 @@
 ---
-name: Vim Impetus Placerat Cotidieque Ad
+name: "FastAPI와 함께하는 비동기와 테스트"
 speakers:
-  - Tolga Philip
+  - 김광일
 categories:
-  - Cat B
-  - Talk
+  - 웹 프레임워크 (Web Framework)
+  - 20min
 ---
 
-Lorem ipsum dolor sit amet, mel tritani quaestio ne. Sed cu quot erat. Stet mutat moderatius ad vel. Ne eum quod expetendis, odio eros nominavi sed et, eu suscipit atomorum sit. Facete maluisset urbanitas in eos, idque expetendis et vis, et quo everti quaestio maiestatis.
+- 발표 길이: 20분
 
-At elit omnium vel, utamur ponderum definitionem cu duo. Ex eam quot meliore. Modus admodum antiopam duo in, et esse incorrupte percipitur nec, ei facete utroque torquatos his. Ea vel moderatius cotidieque conclusionemque, noluisse menandri consetetur id pri.
+FastAPI의 강점을 살리기 위해 SQLAlchemy 비동기 적용 및 pytest에서 비동기 적용했던 경험을 바탕으로 비동기에 대해 자세히 알아보는 발표입니다.
