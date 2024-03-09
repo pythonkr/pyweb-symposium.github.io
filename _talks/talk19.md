@@ -1,5 +1,5 @@
 ---
-name: "(가제) API - 설계 먼저 할래, 개발 먼저 할래?"
+name: "API - 설계 먼저 할래, 개발 먼저 할래?"
 speakers:
   - 유저스틴
 categories:
