@@ -40,11 +40,11 @@
               <span class="live-hide" data-start="{{ timestamp_start }}" data-end="{{ timestamp_end }}">
             {%- endif -%}
 
-            {%- include partials/get_time_pronoun.html -%}
+            <!-- {%- include partials/get_time_pronoun.html -%}
             {%- include partials/get_talk_time.html -%}
             <span class="d-none d-sm-inline">
               {{- time_pronoun -}}
-            </span> {% include partials/show_talk_time.html -%}
+            </span> {% include partials/show_talk_time.html -%} -->
 
             {%- if site.conference.live -%}
               </span>
@@ -56,9 +56,9 @@
               {{- site.data.lang[site.conference.lang].pronoun.in | default: "in" -}}
             </span> {% include partials/show_room.html -%}
 
-            <span class="d-none d-sm-inline ml-1">
+            <!-- <span class="d-none d-sm-inline ml-1">
               {{- site.data.lang[site.conference.lang].pronoun.for | default: "for" -}}
-            </span> {% include partials/show_talk_duration.html -%}
+            </span> {% include partials/show_talk_duration.html -%} -->
 
           {% endif %}
         {% endfor %}
