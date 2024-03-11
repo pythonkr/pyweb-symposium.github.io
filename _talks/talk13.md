@@ -5,6 +5,7 @@ speakers:
 categories:
   - 웹 프레임워크 (Web Framework)
   - 20min
+  - 초급
 ---
 
 - 발표 길이: 20분

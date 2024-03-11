@@ -5,6 +5,7 @@ speakers:
 categories:
   - 클라우드 (Cloud)
   - 40min
+  - 초급
 ---
 
 - 발표 길이: 40분

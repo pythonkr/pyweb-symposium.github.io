@@ -5,6 +5,7 @@ speakers:
 categories:
   - 설계 (Architecture)
   - 20min
+  - 초급
 ---
 
 - 발표 길이: 20분

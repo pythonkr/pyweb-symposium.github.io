@@ -5,6 +5,7 @@ speakers:
 categories:
   - 배포 (CI / CD) (Deploy)
   - 40min
+  - 초급
 ---
 
 - 발표 길이: 40분

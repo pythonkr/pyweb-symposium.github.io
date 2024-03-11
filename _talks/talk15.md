@@ -5,6 +5,7 @@ speakers:
 categories:
   - 웹서비스 운영 (Operating web service)
   - 40min
+  - 초급
 ---
 
 - 발표 길이: 40분
