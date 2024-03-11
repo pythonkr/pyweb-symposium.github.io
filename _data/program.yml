@@ -1,25 +1,67 @@
 days:
-- name: Monday
-  abbr: Mo
-  date: 2020-01-31
+- name: 1부
+  abbr: 1부
+  date: 2024-03-23
   rooms:
   - name: Room A
     talks:
-      - name: Vim Impetus Placerat Cotidieque Ad
-        time_start: '12:00'
-        time_end: '12:45'
-      - name: Condimentum Vitae Sapien Pellentesque
-        time_start: '12:45'
-        time_end: '13:30'
+      - name: "FastAPI와 함께 하는 문서 우선 개발(Document First Development, DFD)"
+        time_start: '10:00'
+        time_end: '10:40'
+      - name: "FastAPI 던전 공략하기"
+        time_start: '10:50'
+        time_end: '11:30'
+      - name: "FastAPI와 asyncio 생태계에서 커머스 서비스 구현하기"
+        time_start: '11:50'
+        time_end: '12:10'
+      - name: "FastAPI를 활용한 MSA 설계"
+        time_start: '14:00'
+        time_end: '14:20'
+      - name: "Serverless Exodus (feat. ECS Fargate, FastAPI)"
+        time_start: '15:00'
+        time_end: '15:40'
+      - name: "API - 설계 먼저 할래, 개발 먼저 할래?"
+        time_start: '16:20'
+        time_end: '17:00'
 
   - name: Room B
     talks:
-      - name: Arcu Non Odio
-        time_start: '12:00'
-        time_end: '13:00'
+      - name: "Django에 힙한 것 적용하기, 대신 찍먹해드립니다."
+        time_start: '10:00'
+        time_end: '10:40'
+      - name: "GitActions를 활용한 Django CI/CD 구축"
+        time_start: '10:50'
+        time_end: '11:30'
+      - name: "생산성을 위해 Django RESTFramework를 공부하다"
+        time_start: '11:50'
+        time_end: '12:10'
+      - name: "Django RBAC 역할 기반 권한 관리 시스템 구축기"
+        time_start: '14:00'
+        time_end: '14:20'
+      - name: "캐시 패턴의 진화사"
+        time_start: '15:00'
+        time_end: '15:40'
+      - name: "API - 설계 먼저 할래, 개발 먼저 할래?"
+        time_start: '16:20'
+        time_end: '17:00'
 
   - name: Room C
     talks:
-      - name: Eu Nisl Nunc Mi Ipsum Faucibus
-        time_start: '13:30'
-        time_end: '14:30'
+      - name: "Back To The Classic (부제: 배포 방식 변경으로 하루 30분 절약하기)"
+        time_start: '10:00'
+        time_end: '10:40'
+      - name: "정답은 없지만 오답은 있답니다"
+        time_start: '10:50'
+        time_end: '11:30'
+      - name: "SQLAlchemy & Postgres 미리 알았다면 좋았을 팁"
+        time_start: '11:50'
+        time_end: '12:10'
+      - name: "Python의 flask에서 멀티 스레딩으로 큰 작업의 시간 줄이기"
+        time_start: '14:00'
+        time_end: '14:20'
+      - name: "코드만으로 서버리스 API 인프라 구축하기 (with Serverless Framework)"
+        time_start: '15:00'
+        time_end: '15:40'
+      - name: "API - 설계 먼저 할래, 개발 먼저 할래?"
+        time_start: '16:20'
+        time_end: '17:00'
