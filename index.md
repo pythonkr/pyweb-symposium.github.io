@@ -8,6 +8,4 @@ layout: home
 일시 : 2024년 3월 23일 (토) 10:00 ~ 17:00<br>
 장소 : 한국 마이크로소프트 (<a class="button" href="https://naver.me/5CzpevRF">https://naver.me/5CzpevRF</a>) 13층 (주차지원 X)
 
-<a class="button" href="/program/"> 발표 시간표 확인하기 </a>
-
 <a class="button" href="/talks/"> 발표 목록 확인하기 </a>
