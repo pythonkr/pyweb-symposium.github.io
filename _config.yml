@@ -61,6 +61,8 @@ conference:
 
   navigation:
     links:
+      - name: 발표 시간표 (Schedule)
+        relative_url: /program/
       - name: 발표 목록
         relative_url: /talks/
       - name: CoC

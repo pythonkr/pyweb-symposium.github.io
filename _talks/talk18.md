@@ -1,5 +1,5 @@
 ---
-name: "코드만으로 서버리스 API 인프라 구축하기 (with Serverless Framework) "
+name: "코드만으로 서버리스 API 인프라 구축하기 (with Serverless Framework)"
 speakers:
   - 천명욱
 categories:
