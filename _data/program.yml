@@ -20,6 +20,9 @@ days:
       - name: "Serverless Exodus (feat. ECS Fargate, FastAPI)"
         time_start: '15:00'
         time_end: '15:40'
+      - name: "FastAPI와 함께하는 비동기와 테스트"
+        time_start: '15:50'
+        time_end: '16:10'
       - name: "API 개발: 설계 먼저 할래, 구현 먼저 할래?"
         time_start: '16:20'
         time_end: '17:00'
@@ -41,6 +44,9 @@ days:
       - name: "캐시 패턴의 진화사"
         time_start: '15:00'
         time_end: '15:40'
+      - name: "장고 마이그레이션 팁: 불필요한 리소스 줄이기"
+        time_start: '15:50'
+        time_end: '16:10'
       - name: "API 개발: 설계 먼저 할래, 구현 먼저 할래?"
         time_start: '16:20'
         time_end: '17:00'
@@ -62,6 +68,9 @@ days:
       - name: "코드만으로 서버리스 API 인프라 구축하기 (with Serverless Framework)"
         time_start: '15:00'
         time_end: '15:40'
+      - name: "과거로의 회귀? Hypermedia 기반 개발 fastapi HTMX 체험하기"
+        time_start: '15:50'
+        time_end: '16:10'
       - name: "API 개발: 설계 먼저 할래, 구현 먼저 할래?"
         time_start: '16:20'
         time_end: '17:00'

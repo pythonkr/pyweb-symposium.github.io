@@ -251,6 +251,44 @@
           </tr>
           <tr>
             <th scope="row" class="col-title text-center vertical-middle">
+              15:50<br>~<br>16:10
+            </th>
+            <td class="col-space p-0"></td>
+            {%- for r in d.rooms -%}
+              {%- assign room = site.rooms | where: 'name', r.name | first -%}
+
+              {%- for t in r.talks -%}
+                {%- if t.time_start == '15:50' %}
+                {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+                {%- include partials/get_main_category.html -%}
+                <td class="alert alert-{{ main_cat_color }} shadow-sm overflow-hidden">
+                  <p class="mb-2">
+                    {%- include partials/show_talk.html %}
+                  </p>
+                  <p class="font-weight-light mb-2">
+                    {%- include partials/list_speakers.html %}
+                  </p>
+                  <p class="mb-1">
+                    {%- include partials/list_sub_categories.html %}
+                  </p>
+                </td>
+                {%- endif -%}  
+
+              {%- endfor %}
+
+              {%- if forloop.last != true %}
+                <td class="col-space p-0"></td>
+              {%- endif -%}
+
+            {%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center"></th>
+            <td colspan="6" class="text-center">Break</td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center vertical-middle">
               16:20<br>~<br>17:00
             </th>
             <td class="col-space p-0"></td>
