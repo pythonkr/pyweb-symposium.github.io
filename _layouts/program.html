@@ -59,14 +59,243 @@
     <div class="syncscroll overflow-y-hidden" name="sync-table">
       <table class="table mx-auto">
         <tbody>
-          {%- include partials/get_day_time.html -%}
+          <tr>
+            <th scope="row" class="col-title text-center vertical-middle">
+              10:00<br>~<br>10:40
+            </th>
+            <td class="col-space p-0"></td>
+            {%- for r in d.rooms -%}
+              {%- assign room = site.rooms | where: 'name', r.name | first -%}
+
+              {%- for t in r.talks -%}
+                {%- if t.time_start == '10:00' %}
+                {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+                {%- include partials/get_main_category.html -%}
+                <td class="alert alert-{{ main_cat_color }} shadow-sm overflow-hidden">
+                  <p class="mb-2">
+                    {%- include partials/show_talk.html %}
+                  </p>
+                  <p class="font-weight-light mb-2">
+                    {%- include partials/list_speakers.html %}
+                  </p>
+                  <p class="mb-1">
+                    {%- include partials/list_sub_categories.html %}
+                  </p>
+                </td>
+                {%- endif -%}  
+
+              {%- endfor %}
+
+              {%- if forloop.last != true %}
+                <td class="col-space p-0"></td>
+              {%- endif -%}
+
+            {%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center"></th>
+            <td colspan="6" class="text-center">Break</td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center vertical-middle">
+              10:50<br>~<br>11:30
+            </th>
+            <td class="col-space p-0"></td>
+            {%- for r in d.rooms -%}
+              {%- assign room = site.rooms | where: 'name', r.name | first -%}
+
+              {%- for t in r.talks -%}
+                {%- if t.time_start == '10:50' %}
+                {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+                {%- include partials/get_main_category.html -%}
+                <td class="alert alert-{{ main_cat_color }} shadow-sm overflow-hidden">
+                  <p class="mb-2">
+                    {%- include partials/show_talk.html %}
+                  </p>
+                  <p class="font-weight-light mb-2">
+                    {%- include partials/list_speakers.html %}
+                  </p>
+                  <p class="mb-1">
+                    {%- include partials/list_sub_categories.html %}
+                  </p>
+                </td>
+                {%- endif -%}  
+
+              {%- endfor %}
+
+              {%- if forloop.last != true %}
+                <td class="col-space p-0"></td>
+              {%- endif -%}
+
+            {%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center"></th>
+            <td colspan="6" class="text-center">Break</td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center vertical-middle">
+              11:50<br>~<br>12:10
+            </th>
+            <td class="col-space p-0"></td>
+            {%- for r in d.rooms -%}
+              {%- assign room = site.rooms | where: 'name', r.name | first -%}
+
+              {%- for t in r.talks -%}
+                {%- if t.time_start == '11:50' %}
+                {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+                {%- include partials/get_main_category.html -%}
+                <td class="alert alert-{{ main_cat_color }} shadow-sm overflow-hidden">
+                  <p class="mb-2">
+                    {%- include partials/show_talk.html %}
+                  </p>
+                  <p class="font-weight-light mb-2">
+                    {%- include partials/list_speakers.html %}
+                  </p>
+                  <p class="mb-1">
+                    {%- include partials/list_sub_categories.html %}
+                  </p>
+                </td>
+                {%- endif -%}  
+
+              {%- endfor %}
+
+              {%- if forloop.last != true %}
+                <td class="col-space p-0"></td>
+              {%- endif -%}
+
+            {%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center"></th>
+            <td colspan="6" class="text-center">Break</td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center vertical-middle">
+              14:00<br>~<br>14:20
+            </th>
+            <td class="col-space p-0"></td>
+            {%- for r in d.rooms -%}
+              {%- assign room = site.rooms | where: 'name', r.name | first -%}
+
+              {%- for t in r.talks -%}
+                {%- if t.time_start == '14:00' %}
+                {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+                {%- include partials/get_main_category.html -%}
+                <td class="alert alert-{{ main_cat_color }} shadow-sm overflow-hidden">
+                  <p class="mb-2">
+                    {%- include partials/show_talk.html %}
+                  </p>
+                  <p class="font-weight-light mb-2">
+                    {%- include partials/list_speakers.html %}
+                  </p>
+                  <p class="mb-1">
+                    {%- include partials/list_sub_categories.html %}
+                  </p>
+                </td>
+                {%- endif -%}  
+
+              {%- endfor %}
+
+              {%- if forloop.last != true %}
+                <td class="col-space p-0"></td>
+              {%- endif -%}
+
+            {%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center"></th>
+            <td colspan="6" class="text-center">Break</td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center vertical-middle">
+              15:00<br>~<br>15:40
+            </th>
+            <td class="col-space p-0"></td>
+            {%- for r in d.rooms -%}
+              {%- assign room = site.rooms | where: 'name', r.name | first -%}
+
+              {%- for t in r.talks -%}
+                {%- if t.time_start == '15:00' %}
+                {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+                {%- include partials/get_main_category.html -%}
+                <td class="alert alert-{{ main_cat_color }} shadow-sm overflow-hidden">
+                  <p class="mb-2">
+                    {%- include partials/show_talk.html %}
+                  </p>
+                  <p class="font-weight-light mb-2">
+                    {%- include partials/list_speakers.html %}
+                  </p>
+                  <p class="mb-1">
+                    {%- include partials/list_sub_categories.html %}
+                  </p>
+                </td>
+                {%- endif -%}  
+
+              {%- endfor %}
+
+              {%- if forloop.last != true %}
+                <td class="col-space p-0"></td>
+              {%- endif -%}
+
+            {%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center"></th>
+            <td colspan="6" class="text-center">Break</td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-title text-center vertical-middle">
+              16:20<br>~<br>17:00
+            </th>
+            <td class="col-space p-0"></td>
+            {%- for r in d.rooms -%}
+              {%- if r.name == 'Room A' %}
+                {%- assign room = site.rooms | where: 'name', r.name | first -%}
+
+                {%- for t in r.talks -%}
+                  {%- if t.time_start == '16:20' %}
+                  {%- assign talk = site.talks | where: 'name', t.name | first -%}
+
+                  {%- include partials/get_main_category.html -%}
+                  <td class="alert alert-{{ main_cat_color }} shadow-sm overflow-hidden" colspan="6">
+                    <p class="mb-2">
+                      {%- include partials/show_talk.html %}
+                    </p>
+                    <p class="font-weight-light mb-2">
+                      {%- include partials/list_speakers.html %}
+                    </p>
+                    <p class="mb-1">
+                      {%- include partials/list_sub_categories.html %}
+                    </p>
+                  </td>
+                  {%- endif -%}  
+
+                {%- endfor %}
+
+                {%- if forloop.last != true %}
+                  <td class="col-space p-0"></td>
+                {%- endif -%}
+              {%- endif -%}    
+            {%- endfor %}
+          </tr>
+
+
+
+
+          <!-- {%- include partials/get_day_time.html -%}
 
           {%- if day_end_day > day_start_day -%}
             {%- assign day_end_hour = day_end_day | minus: day_start_day | times: 24 | plus: day_end_hour -%}
           {%- endif -%}
 
           {%- assign day_duration_min = day_end_hour | minus: day_start_hour | times: 60 | minus: day_start_min | plus: day_end_min -%}
-          {%- assign nbr_steps = day_duration_min | divided_by: site.conference.program.time_steps -%}
+          {%- assign nbr_steps = day_duration_min | divided_by: site.conference.program.time_steps -%} -->
 
           <!--
           The shadow of a previous program block should be above a later program block, thus
@@ -75,7 +304,7 @@
           Bootstrap uses as lowest z-index for its overlapping elements a z-index of 1000 (for
           $zindex-dropdown).
           -->
-          {%- assign z-index-max = 999 -%}
+          <!-- {%- assign z-index-max = 999 -%}
 
           {%- for i in (1..nbr_steps) -%}
             {%- assign current_day = 0 -%}
@@ -176,7 +405,7 @@
               {%- endfor %}
 
             </tr>
-          {%- endfor %}
+          {%- endfor %} -->
         </tbody>
       </table>
     </div>

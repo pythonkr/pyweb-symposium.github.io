@@ -157,6 +157,9 @@ main.container img {
       width: 70px;
       min-width: 70px;
     }
+    &.vertical-middle {
+      vertical-align: middle;
+    }
   }
 }
 
