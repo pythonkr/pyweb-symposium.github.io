@@ -32,7 +32,7 @@ days:
       - name: "Django에 힙한 것 적용하기, 대신 찍먹해드립니다."
         time_start: '10:00'
         time_end: '10:40'
-      - name: "GitActions를 활용한 Django CI/CD 구축"
+      - name: "생산성을 높여주는 CI/CD With Django, GitHub Actions"
         time_start: '10:50'
         time_end: '11:30'
       - name: "생산성을 위해 Django RESTFramework를 공부하다"
