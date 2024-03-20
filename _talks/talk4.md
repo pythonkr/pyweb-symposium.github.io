@@ -1,5 +1,5 @@
 ---
-name: "GitActions를 활용한 Django CI/CD 구축"
+name: "생산성을 높여주는 CI/CD With Django, GitHub Actions"
 speakers:
   - 김승주
 categories:
