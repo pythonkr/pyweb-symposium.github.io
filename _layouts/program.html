@@ -293,7 +293,7 @@
             </th>
             <td class="col-space p-0"></td>
             {%- for r in d.rooms -%}
-              {%- if r.name == 'Room A' %}
+              {%- if r.name == '독도' %}
                 {%- assign room = site.rooms | where: 'name', r.name | first -%}
 
                 {%- for t in r.talks -%}
