@@ -10,6 +10,8 @@ categories:
 
 - 발표 길이: 40분
 
+- 발표 자료: [Link](https://drive.google.com/file/d/1F9SrobOtMZVaCGfjC5ovT7dwhcjQ5Q5W/view)
+
 시대의 흐름에 역행해 ECS 로 배포하던 걸 EC2 로 변경해 배포 시간을 7분대에서 2분 후반으로 줄였습니다. 
 
 배포 스크립트를 pyinfra 로 구성했습니다. 

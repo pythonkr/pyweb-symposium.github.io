@@ -10,6 +10,8 @@ categories:
 
 - 발표 길이: 40분
 
+- 발표 자료: [Link](https://drive.google.com/file/d/11uJWYagjSCirGZJhD1s5kc0_-w_p9TWs/view)
+
 이 발표는 기존 파이썬 기반의 AWS Lambda 서비스에서, ECS Fargate로 이전한 내용을 담고 있습니다. 그리고, FastAPI 컨테이너를 작성하고 이를 실제 서비스로 운영하며 겪은 내용을 담고 있습니다.
 
 - ECS Fargate로 이전 후 서비스 운영 및 모니터링을 수행하는 과정

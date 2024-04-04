@@ -10,4 +10,6 @@ categories:
 
 - 발표 길이: 20분
 
+- 발표 자료: [Link](https://drive.google.com/file/d/1JSEgkZHKjgQtKn2O5YPVxQQ2NHIwyrzg/view)
+
 장고 마이그레이션을 사용하다 보면 db에 영향이 없는 변경임에도 마이그레이션 파일이 생기는 경우가 있습니다. 불필요한 마이그레이션 파일 생성 방지 등 저의 마이그레이션 팁을 공유합니다.
