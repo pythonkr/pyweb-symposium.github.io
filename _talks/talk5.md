@@ -10,6 +10,8 @@ categories:
 
 - 발표 길이: 20분
 
+- 발표 자료: [Link](https://drive.google.com/file/d/1q68G6HzPGp-O6qKJgHcTQJeXyIpwouwa/view)
+
 플랫폼을 운영하다보면 자연스럽게 다양한 조직과 다양한 자원이 만들어집니다. 조직과 자원 사이의 복잡한 권한 관계를 다루는 것은 매우 중요한 일입니다.
 Kubernetes나 Github 등의 대규모 시스템에서는 역할 기반 권한 관리 체계(RBAC)를 통해 복잡한 권한 관리 문제를 해결합니다.
 

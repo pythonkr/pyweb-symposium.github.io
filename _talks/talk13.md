@@ -10,4 +10,6 @@ categories:
 
 - 발표 길이: 20분
 
+- 발표 자료: (준비중)
+
 FastAPI 아키텍처 소개를 기반으로, FastAPI가 왜 MSA에 적합한지와 어떤 식으로 설계할 수 있는지에 대한 Best Practice를 소개합니다.

@@ -10,6 +10,8 @@ categories:
 
 - 발표 길이: 40분
 
+- 발표 자료: [Link](https://docs.google.com/presentation/d/10GktDKhTIpfjQR6kVxTBOvRE5j9Onqbw/edit)
+
 TPS 0부터 시작한 서버가 TPS 2700에 달하기까지 어떤 문제를 겪었고, 그것들을 어떻게 하나씩 해결해 나갔는지에 대해서 
 
 1. 최초 코드의 어떤 레이어에 어떻게 캐시를 적용했는지, 왜 그렇게 했는지 (Django에서 캐시를 다루면서 겪는 고충에 대해서 다룹니다)

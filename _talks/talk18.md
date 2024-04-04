@@ -10,6 +10,8 @@ categories:
 
 - 발표 길이: 40분
 
+- 발표 자료: [Link](https://drive.google.com/file/d/1gbUh2NT8E_8HqsJBFQo_Rq89LNS7wJyN/view)
+
 - 서버리스 아키텍처 소개
 - Serverless Framework 소개
 - 서버리스 API 인프라 구축 과정
